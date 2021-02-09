@@ -17,14 +17,14 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.B, function () {
     playTone1500()
-    playTone()
 })
 function playTone1500 () {
-    music.playTone(1500, 100)
+    for (let index = 1500; index <= 4000; index+=500) {
+        music.playTone(index, 100)
+    }
 }
 function playTone () {
-    for (let index = 0; index <= 4000; index++) {
-        music.playTone(index, 50)
-    }
+    let tones: number = []
+    music.playTone(tones, 50)
 }
 music.setBuiltInSpeakerEnabled(true)
