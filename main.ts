@@ -1,22 +1,8 @@
 input.onButtonPressed(Button.A, function () {
-    serial.writeLine("Alarm")
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    music.playTone(2700, 50)
-    basic.pause(100)
-    music.playTone(2800, 50)
-    basic.pause(100)
-    music.playTone(2900, 50)
-    basic.pause(100)
-    basic.clearScreen()
+    playTone1500()
 })
 input.onButtonPressed(Button.B, function () {
-    playTone1500()
+    playTone()
 })
 function playTone1500 () {
     for (let index = 1500; index <= 4000; index+=500) {
@@ -24,7 +10,8 @@ function playTone1500 () {
     }
 }
 function playTone () {
-    let tones: number = []
-    music.playTone(tones, 50)
+    for (let index2 = 4000; index2 >= 1000; index2-=500) {
+        music.playTone(index2, 50)
+    }
 }
 music.setBuiltInSpeakerEnabled(true)
