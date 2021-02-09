@@ -1,6 +1,9 @@
 input.onButtonPressed(Button.A, function () {
     playTone1500()
 })
+function doReMiFa () {
+    manyTones = [1047, 1175, 1319, 1396, 1568, 1760, 1976, 2093]
+}
 input.onButtonPressed(Button.B, function () {
     playTone()
 })
@@ -14,4 +17,6 @@ function playTone () {
         music.playTone(index2, 50)
     }
 }
+let manyTones: number[] = []
 music.setBuiltInSpeakerEnabled(true)
+let tones = 1500
